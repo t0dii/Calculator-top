@@ -1,0 +1,24 @@
+/*Test functions using console.log */
+function addition(a, b) {
+  return a + b;
+}
+const thing = addition(1, 2);
+console.log(thing);
+
+function subtraction(a, b) {
+  return a - b;
+}
+const thing2 = subtraction(2, 1);
+console.log(thing2);
+
+function multiplication(a, b) {
+  return a * b;
+}
+const thing3 = multiplication(2, 2);
+console.log(thing3);
+
+function division(a, b) {
+  return a / b;
+}
+const thing4 = division(4, 2);
+console.log(thing4);
