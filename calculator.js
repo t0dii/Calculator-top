@@ -28,8 +28,22 @@ function division(a, b) {
 const thing4 = division(4, 2);
 console.log(thing4);
 
+/*function to take two numbers and operator */
 function operate(number1, operator, number2) {
   switch (operator.trim()) {
     case '+':
+      return number1 + number2;
+      break;
+    case '-':
+      return number1 - number2;
+      break;
+    case '*':
+      return number1 * number2;
+      break;
+    case '/':
+      return number1 / number2;
+      break;
   }
+
+
 }
