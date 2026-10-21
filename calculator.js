@@ -1,3 +1,8 @@
+/*Local variables*/
+let number1;
+let number2;
+let operator;
+
 /*Test functions using console.log */
 function addition(a, b) {
   return a + b;
@@ -22,3 +27,9 @@ function division(a, b) {
 }
 const thing4 = division(4, 2);
 console.log(thing4);
+
+function operate(number1, operator, number2) {
+  switch (operator.trim()) {
+    case '+':
+  }
+}
