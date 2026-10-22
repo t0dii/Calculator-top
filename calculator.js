@@ -45,5 +45,17 @@ function operate(number1, operator, number2) {
       break;
   }
 
+/*making buttons functional */
+let buttons = document.querySelectorAll('.num');
+for (let i=0; i< buttons.length; i++){
+  let button = buttons[i];
+  button.addEventListener('click' , () => {
+    document.getElementById("display").innerHTML += button.innerHTML
+  })
+}
+
+
+
+
 
 }
