@@ -1,8 +1,8 @@
 /*defining the DOM methods */
 const btn = document.querySelectorAll("button");
-const display = document.querySelector(".calculator-display");
-const equalValue = document.getElementsById("equal");
-const clearValue = document.getElementbyId("clear");
+const display = document.getElementById("calculator-display");
+// const equalValue = document.getElementsById("equal");
+// const clearValue = document.getElementbyId("clear");
 
 /*Local variables*/
 let firstValue = "";
@@ -41,19 +41,30 @@ function operate(firstValue, operand, secondValue) {
 }
 
 //Handles the property assigned to the button
-btn.forEach((button) => {
-  const buttonValues = btn.innerText;
-  button.onClick = () => {
-    handleButton(buttonValues);
-  };
-});
+let numDisplayValue = document.querySelectorAll(".num");
+for (let i = 0; i < numDisplayValue.length; i++) {
+  let changeValue = numDisplayValue[i];
+  changeValue.addEventListener('click', () => {
+    document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
+  })
+}
 
+let displayValue = document.querySelectorAll(".op");
+for (let i = 0; i < displayValue.length; i++) {
+  let changeValue = displayValue[i];
+  changeValue.addEventListener('click', () => {
+    document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
+  })
+}
 //Updates the display, defaults to zero
 const changeDisplay = () => {
   display.innerText = firstValue || "0";
 }
 
-const handleCalculations = () => {
+const equalCalculation = () => {
    //if press equal then do calculations
-   // press a button to change the value of the display 
+   // press a button to change the value of the display
+  if (buttonValues === "=") {
+
+   }
 }
