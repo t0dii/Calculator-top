@@ -1,7 +1,7 @@
 /*defining the DOM methods */
 const btn = document.querySelectorAll("button");
 const display = document.getElementById("calculator-display");
-// const equalValue = document.getElementsById("equal");
+const equalValue = document.getElementById("equal");
 // const clearValue = document.getElementbyId("clear");
 
 /*Local variables*/
@@ -27,7 +27,7 @@ function division(a, b) {
 }
 
 /*function to take two numbers and operator */
-function operate(firstValue, operand, secondValue) {
+const operate = (firstValue, operand, secondValue) => {
   switch (operand.trim()) {
     case '+':
       return addition(firstValue, secondValue);
@@ -45,7 +45,9 @@ let numDisplayValue = document.querySelectorAll(".num, .op");
 for (let i = 0; i < numDisplayValue.length; i++) {
   let changeValue = numDisplayValue[i];
   changeValue.addEventListener('click', () => {
-    document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
+    //change the initial value to the value selected
+    firstValue += changeValue.textContent;
+    changeDisplay();
   })
 }
 
