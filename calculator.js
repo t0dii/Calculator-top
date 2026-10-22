@@ -41,17 +41,9 @@ function operate(firstValue, operand, secondValue) {
 }
 
 //Handles the property assigned to the button for numbers
-let numDisplayValue = document.querySelectorAll(".num");
+let numDisplayValue = document.querySelectorAll(".num, .op");
 for (let i = 0; i < numDisplayValue.length; i++) {
   let changeValue = numDisplayValue[i];
-  changeValue.addEventListener('click', () => {
-    document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
-  })
-}
-//Handles the property assigned to the button for operators
-let displayValue = document.querySelectorAll(".op");
-for (let i = 0; i < displayValue.length; i++) {
-  let changeValue = displayValue[i];
   changeValue.addEventListener('click', () => {
     document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
   })
