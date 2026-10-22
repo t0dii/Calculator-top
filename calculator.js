@@ -1,6 +1,8 @@
 /*defining the DOM methods */
 const btn = document.querySelectorAll("button");
 const display = document.querySelector(".calculator-display");
+const equalValue = document.getElementsById("equal");
+const clearValue = document.getElementbyId("clear");
 
 /*Local variables*/
 let firstValue = "";
@@ -38,6 +40,7 @@ function operate(firstValue, operand, secondValue) {
   }
 }
 
+//Handles the property assigned to the button
 btn.forEach((button) => {
   const buttonValues = btn.innerText;
   button.onClick = () => {
@@ -45,6 +48,12 @@ btn.forEach((button) => {
   };
 });
 
-function changeDisplay() {
-  display.innerText = firstValue || 0
+//Updates the display, defaults to zero
+const changeDisplay = () => {
+  display.innerText = firstValue || "0";
+}
+
+const handleCalculations = () => {
+   //if press equal then do calculations
+   // press a button to change the value of the display 
 }
