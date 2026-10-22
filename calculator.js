@@ -40,21 +40,24 @@ const operate = (firstValue, operand, secondValue) => {
   }
 }
 
-//Handles the property assigned to the button for numbers
-let numDisplayValue = document.querySelectorAll(".num, .op");
-for (let i = 0; i < numDisplayValue.length; i++) {
-  let changeValue = numDisplayValue[i];
-  changeValue.addEventListener('click', () => {
-    //change the initial value to the value selected
-    firstValue += changeValue.textContent;
-    changeDisplay();
-  })
-}
-
 //Updates the display, defaults to zero
 const changeDisplay = () => {
-  display.innerText = firstValue || "0";
+  display.innerText = firstValue + operand + secondValue || "0";
 }
+
+//Handles the property assigned to the button for numbers
+const numDisplayValue = document.querySelectorAll(".num, .op");
+  numDisplayValue.forEach(changeValue =>
+    changeValue.addEventListener('click', () => {
+    if (changeValue.classList.contains("num")) {
+      firstValue += changeValue.textContent;
+      changeDisplay();
+    } else {
+      operand = changeValue.textContent;
+      changeDisplay();
+    }
+  })
+)
 
 const equalCalculation = () => {
    //if press equal then do calculations
