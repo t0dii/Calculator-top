@@ -40,7 +40,7 @@ function operate(firstValue, operand, secondValue) {
   }
 }
 
-//Handles the property assigned to the button
+//Handles the property assigned to the button for numbers
 let numDisplayValue = document.querySelectorAll(".num");
 for (let i = 0; i < numDisplayValue.length; i++) {
   let changeValue = numDisplayValue[i];
@@ -48,7 +48,7 @@ for (let i = 0; i < numDisplayValue.length; i++) {
     document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
   })
 }
-
+//Handles the property assigned to the button for operators
 let displayValue = document.querySelectorAll(".op");
 for (let i = 0; i < displayValue.length; i++) {
   let changeValue = displayValue[i];
@@ -56,6 +56,7 @@ for (let i = 0; i < displayValue.length; i++) {
     document.getElementById("calculator-display").innerHTML += changeValue.innerHTML
   })
 }
+
 //Updates the display, defaults to zero
 const changeDisplay = () => {
   display.innerText = firstValue || "0";
