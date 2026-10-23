@@ -55,7 +55,10 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
           secondValue += changeValue.textContent;
         }
       changeDisplay();
-    } else {
+      } else {
+        if (operand !== "" && secondValue !== "") {
+          evaluate();
+        }
       operand = changeValue.textContent;
       changeDisplay();
     }
@@ -63,12 +66,19 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
 )
 
 //Does the calculations
-const equalCalculation = () => {
+const evaluate = () => {
+  //changes the values from string to number
   const result = operate(Number(firstValue), operand, Number(secondValue));
+  //store the values into the first value
   firstValue = String(result);
+  //clear the second and operand
   secondValue = '';
   operand = '';
   changeDisplay();
+}
+
+const equalCalculation = () => {
+  evaluate();
 }
 equalValue.addEventListener('click', equalCalculation);
 
