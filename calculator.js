@@ -2,7 +2,7 @@
 const btn = document.querySelectorAll("button");
 const display = document.getElementById("calculator-display");
 const equalValue = document.getElementById("equal");
-// const clearValue = document.getElementbyId("clear");
+const clearValue = document.getElementById("clear");
 
 /*Local variables*/
 let firstValue = "";
@@ -50,7 +50,7 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
   numDisplayValue.forEach(changeValue =>
     changeValue.addEventListener('click', () => {
       if (changeValue.classList.contains("num")) {
-        if (operand === "" && operand) {
+        if (operand === "") {
           firstValue += changeValue.textContent;
         } else {
           secondValue += changeValue.textContent;
@@ -64,9 +64,13 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
 )
 
 const equalCalculation = () => {
-   //if press equal then do calculations
-   // press a button to change the value of the display
-  if (buttonValues === "=") {
-      
-   }
+  const result = operate(Number(firstValue), operand, Number(secondValue));
+  firstValue = String(result);
+  secondValue = '';
+  operand = '';
+  changeDisplay();
+}
+equalValue.addEventListener('click', equalCalculation);
+const clearDisplay = () => {
+
 }
