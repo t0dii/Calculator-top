@@ -49,8 +49,12 @@ const changeDisplay = () => {
 const numDisplayValue = document.querySelectorAll(".num, .op");
   numDisplayValue.forEach(changeValue =>
     changeValue.addEventListener('click', () => {
-    if (changeValue.classList.contains("num")) {
-      firstValue += changeValue.textContent;
+      if (changeValue.classList.contains("num")) {
+        if (operand === "" && operand) {
+          firstValue += changeValue.textContent;
+        } else {
+          secondValue += changeValue.textContent;
+        }
       changeDisplay();
     } else {
       operand = changeValue.textContent;
@@ -63,6 +67,6 @@ const equalCalculation = () => {
    //if press equal then do calculations
    // press a button to change the value of the display
   if (buttonValues === "=") {
-
+      
    }
 }
