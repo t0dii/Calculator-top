@@ -1,5 +1,4 @@
 /*defining the DOM methods */
-const btn = document.querySelectorAll("button");
 const display = document.getElementById("calculator-display");
 const equalValue = document.getElementById("equal");
 const clearValue = document.getElementById("clear");
@@ -63,6 +62,7 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
   })
 )
 
+//Does the calculations
 const equalCalculation = () => {
   const result = operate(Number(firstValue), operand, Number(secondValue));
   firstValue = String(result);
@@ -71,6 +71,12 @@ const equalCalculation = () => {
   changeDisplay();
 }
 equalValue.addEventListener('click', equalCalculation);
-const clearDisplay = () => {
 
+//Clears the value on the display
+const clearDisplay = () => {
+  firstValue = '';
+  operand = '';
+  secondValue = '';
+  changeDisplay();
 }
+clearValue.addEventListener('click', clearDisplay)
