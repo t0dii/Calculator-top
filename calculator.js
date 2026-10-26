@@ -46,9 +46,12 @@ const changeDisplay = () => {
 
 //Handles the property assigned to the button for numbers
 const numDisplayValue = document.querySelectorAll(".num, .op");
+  //loop through the buttons
   numDisplayValue.forEach(changeValue =>
     changeValue.addEventListener('click', () => {
       if (changeValue.classList.contains("num")) {
+        //Checks if operand is empty
+        // If so change first value
         if (operand === "") {
           firstValue += changeValue.textContent;
         } else {
@@ -56,9 +59,11 @@ const numDisplayValue = document.querySelectorAll(".num, .op");
         }
       changeDisplay();
       } else {
+        //If operand is not empty, calculate
         if (operand !== "" && secondValue !== "") {
           evaluate();
         }
+        //Else change the value of the operand.
       operand = changeValue.textContent;
       changeDisplay();
     }
@@ -80,6 +85,7 @@ const evaluate = () => {
 const equalCalculation = () => {
   evaluate();
 }
+//Need this to make the button work
 equalValue.addEventListener('click', equalCalculation);
 
 //Clears the value on the display
